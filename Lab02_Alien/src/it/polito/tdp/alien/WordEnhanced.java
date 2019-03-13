@@ -10,6 +10,10 @@ public class WordEnhanced {
 		this.alienWord = alienWord;
 		translations = new LinkedList<String>();
 	}
+
+	public void add(String trad) {
+		translations.add(trad);
+	}
 	
 	
 	

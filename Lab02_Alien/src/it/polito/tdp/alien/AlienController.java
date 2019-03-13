@@ -42,11 +42,14 @@ public class AlienController {
     	String parola [] = this.txtWord.getText().split(" ");
     	
     	if (parola.length == 2) {
-    		if (!parola[0].matches("[a-zA-Z]+") || !parola[1].matches("[a-zA-Z]+"))
+    		if (!parola[0].matches("[a-zA-Z]+") || !parola[1].matches("[a-zA-Z]+")) {
     			this.txtMessaggi.appendText("Devi inserire delle parole!\n");
+    		}
+    		WordEnhanced daAggiungere = new WordEnhanced (parola[0], parola[1]); 
+    		if (dizionario.add(parola [0], parola [1]));
     	}
     	
-    	//dizionario.add(parola);
+    	//
     }
 
     @FXML

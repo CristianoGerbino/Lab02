@@ -11,9 +11,13 @@ public class AlienDictionary {
 	}
 
 
-	public void add(String p) {
-		String parola [] = p.split(" ");
-		
+	public boolean add(String alien, String trad) {
+		WordEnhanced daAggiungere = dizionario.get(alien);
+		if (daAggiungere == null) {
+			return false;
+		}
+		daAggiungere.add(trad);
+		return true;
 	}
 	
 	
