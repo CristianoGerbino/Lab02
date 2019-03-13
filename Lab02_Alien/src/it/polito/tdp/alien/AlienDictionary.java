@@ -9,6 +9,12 @@ public class AlienDictionary {
 	public AlienDictionary() {
 		dizionario = new HashMap<String, WordEnhanced>();
 	}
+
+
+	public void add(String p) {
+		String parola [] = p.split(" ");
+		
+	}
 	
 	
 	

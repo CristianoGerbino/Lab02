@@ -12,7 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class AlienController {
-	private Map<String, String> parole = new HashMap<String, String>();
+	AlienDictionary dizionario = new AlienDictionary();
 
     @FXML
     private ResourceBundle resources;
@@ -39,30 +39,14 @@ public class AlienController {
 
     @FXML
     void doTranslate(ActionEvent event) {
-    	String parola []= this.txtWord.getText().split(" ");
+    	String parola [] = this.txtWord.getText().split(" ");
     	
     	if (parola.length == 2) {
-    		if (!parola[0].matches("[a-zA-Z]+") || !parola[1].matches("[a-zA-Z]+")) {
-    			this.txtMessaggi.appendText("Devi inserire una parola!\n");
-    			throw new InvalidParameterException("Devi inserire una parola!\n");
-    		}
-    		parole.put(parola[0].toLowerCase(), parola[1].toLowerCase());
-    		txtMessaggi.appendText("Aggiunta nuova parola al dizionario\n");
+    		if (!parola[0].matches("[a-zA-Z]+") || !parola[1].matches("[a-zA-Z]+"))
+    			this.txtMessaggi.appendText("Devi inserire delle parole!\n");
     	}
-    	else if (parola.length == 1) {
-    		if (!parola[0].matches("[a-zA-Z]+")) {
-    			this.txtMessaggi.appendText("Devi inserire una parola!\n");
-    			throw new InvalidParameterException("Devi inserire una parola!\n");
-    		}
-    		String traduzione = parole.get(parola[0].toLowerCase());
-    		if (traduzione == null) {
-    			this.txtMessaggi.appendText("La parola inserita non e' conteuta nel dizionario\n");
-    		}
-    			else {
-    				this.txtMessaggi.appendText("La traduzione e': "+traduzione+"\n");
-    		}
-    	}
-    	this.txtWord.clear();
+    	
+    	//dizionario.add(parola);
     }
 
     @FXML
